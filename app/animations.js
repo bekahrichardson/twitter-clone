@@ -25,18 +25,38 @@ $('textarea').keyup(function() {
   $('#char-count').text(length);
 })
 
-
-
-
 // When there are 10 or less characters, the character counter should turn red.
+$('#char-count').keyup(function() {
+var rest = char-count - $(this).text().length;
+        $("#chars").html(rest);
+        if (rest <= 100) {
+            $("#char-count").css("color", "#999");
+        }
+        else {
+            $("#char-count").css("color", "#FF0000");
+        }
+});
+
+// If the user puts in more than 140 characters, the tweet button should be disabled (and re-enabled when there are <= 140 chars).
+
+
+
+
+
+// When the user successfully inputs characters and clicks the “Tweet” button, a new tweet should be created and added to the tweet stream in the main column, using the user’s fake profile image in the top left and username/fullname.
+
+
+
+
+// The tweet actions (Reply, Retweet, etc) should only show up when you hover over that individual tweet. Otherwise, they should be hidden.
+
+
+
+
+
+// The Retweets/timestamp/Reply areas should also be hidden by default. These should only expand if you click on the tweet. Have the students use a jQuery animation to accomplish the reveal, similar to how it’s done on Twitter.com
+
 
 
 
 });
-
-
-
-
-
-
-// When there are 10 or less characters, the character counter should turn red.
