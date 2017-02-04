@@ -12,15 +12,12 @@ $("textarea").on("click", function() {
   $(this).height(dblHeight);
 });
 
+$("textarea").on("click", function() {
+  $("tweet-controls").show();
+  $("#char-count").show();
+});
 
 
-
-
-
-$('.tweet-compose').val("");
-$('.tweet-compose').css("height", "2.5em");
-
-$('#char-count').text(140);
 
 
 });
