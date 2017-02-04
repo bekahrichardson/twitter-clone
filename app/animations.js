@@ -11,31 +11,27 @@ $("textarea").on("click", function() {
   var dblHeight = currentHeight * 2;
   $(this).height(dblHeight);
 });
-
+// Check below here:
+// and the character count and Tweet buttons should be revealed.
 $("textarea").on("click", function() {
-  $(this).show("#tweet-controls");
-  $(this).show(".tweet-actions");
+  console.log("I'm working");
+  $("#tweet-controls").show();
 });
+
 
 // As the user types, the character count should decrease.
 $('textarea').keyup(function() {
-  var maxLength = 100;
+  var maxLength = 140;
   var length = $(this).val().length;
-  var length = maxLength - length;
-  $('#char-count').text(length);
-})
+  var remainingLength = maxLength - length;
+  $('#char-count').text(remainingLength);
+  if (remainingLength <= 120) {
+      $("#char-count").css("color", "red");
+  }
+});
 
 // When there are 10 or less characters, the character counter should turn red.
-$('#char-count').keyup(function() {
-var rest = char-count - $(this).text().length;
-        $("#chars").html(rest);
-        if (rest <= 100) {
-            $("#char-count").css("color", "#999");
-        }
-        else {
-            $("#char-count").css("color", "#FF0000");
-        }
-});
+
 
 // If the user puts in more than 140 characters, the tweet button should be disabled (and re-enabled when there are <= 140 chars).
 
