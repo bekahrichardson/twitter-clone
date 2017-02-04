@@ -1,18 +1,12 @@
 $(document).ready(function() {
+//hide tweet controls until user's in text area.
 
-  $("#hide").click(function(){
-      $(".button").hide();
-  });
-      $("#show").click(function(){
-            $(".button").show();
-      });
+  $("tweet-controls").hide();
 
-  $("#hide").click(function(){
-      $("#char-count").hide();
-  });
-      $("#show").click(function(){
-            $("#char-count").show();
-      });
+  $(".tweet-actions").hide();
+
+  
+
 
 
 
